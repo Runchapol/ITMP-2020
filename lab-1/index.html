@@ -6,16 +6,18 @@
 	<link rel=stylesheet href="lab.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-<body class="paper">
-	<div id="app">
-		<input type="number" v-model="n">
-		<input type="number" v-model="row">
-		<div class="space"></div>
-		<h3>สูตรคูรแม่ {{n}}</h3>
-		<h4>กลับไปที่แม่ {{before}}</h4>
-		<h4
+<body class="paper" background="https://di.lnwfile.com/0poupk.jpg">
+	<div id="app" align="center">
+		<h1>ตารางสูตรคูณ</h1><br>
+		<b><i>สูตรคูณแม่&emsp;</i></b><input type="number" v-model="n"><br><br>
+		<b><i>จำนวนแถว&emsp;</i></b><input type="number" v-model="row">
+		<div class="space"></div><hr>
+		<h2><u>สูตรคูณแม่ {{n}}</u></h2>
+		<h3
 		v-for="i in r"
-		>{{n}} x {{i}} = {{multiply(i)}}</h4>
+		><br>{{n}} x {{i}} = <font color="red">{{multiply(i)}}</font></h3><hr>
+		<h3><u>ผลรวมทั้งหมด</u></h3>
+		<h2><font color="red">{{sum()}}</font></h2><hr>
 	</div>
 
 	<script>
@@ -28,6 +30,9 @@
 			methods:{
 				multiply: function(row){
 					return this.n*row
+				},
+				sum: function(){
+					return parseInt(this.n)*((parseInt(this.row)*(parseInt(this.row)+1))/2)
 				}
 			},
 			computed:{
