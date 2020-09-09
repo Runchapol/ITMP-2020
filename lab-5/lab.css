@@ -52,7 +52,7 @@ div.box{
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	transition: all .2s;
+	transition: all .4s;
 }
 .btn{
 	width: 100%;
@@ -101,7 +101,7 @@ div.box{
 	border: 3px solid #fffc;
 	transform: scale(.6);
 }
-.box._fruit[data-type="11"]{
+.box._fruit[data-type="red"]{
 	background-color: red;
 }
 
